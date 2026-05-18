@@ -1,7 +1,14 @@
 
 -- COVID-19 DATA EXPLORATION
 
---Skills used: Joins, CTE's, Creating Views, Converting Data Types, Temp Tables, Windows Functions, Aggregate Functions
+--Skills used: 
+-- Joins, 
+-- CTE's, 
+-- Creating Views,
+-- Converting Data Types, 
+-- Temp Tables, 
+-- Windows Functions, 
+-- Aggregate Functions
 
 SELECT *
 FROM PortfolioProject..CovidDeaths
