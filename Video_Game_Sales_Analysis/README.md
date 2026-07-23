@@ -26,8 +26,6 @@ The Tableau dashboard includes:
 - Annual reported-sales and coverage trends
 - Regional sales comparison
 - Regional genre rankings
-- Critic-score-band analysis
-- Publisher rankings
 - Filters for genre, console, publisher, and release year
 
 ## Key findings
