@@ -19,7 +19,7 @@ regions, critic scores, and titles.
 
 Exploratory analysis of COVID-19 cases, deaths, and vaccinations.
 
-- [View project files](./covid-19-analysis/)
+- [View project files](COVID_19 PORTFOLIO PROJECT.sql)
 - [View Tableau dashboard](https://public.tableau.com/views/COVID-19GlobalInsightsData-DrivenPandemicAnalytics/Dashboard1?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 **Tools:** MySQL, Tableau
