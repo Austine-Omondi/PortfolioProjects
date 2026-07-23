@@ -14,7 +14,7 @@ The source contains **64,016 cleaned records** and **39,585 unique title names**
 
 - **Tableau Public dashboard:** [View the interactive dashboard](https://public.tableau.com/views/VideoGamesSalesAnalysis_17848429164650/VideoGamesSalesDashboard?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 - **Case study:** [Video-Game-Sales-Case-Study.md](Video-Game-Sales-Case-Study.md)
-- **MySQL analysis:** [Video-Game-Sales-Portfolio-Analysis.sql](Video-Game-Sales-Portfolio-Analysis.sql)
+- **MySQL analysis:** [Video Games sales-clean exploratory analysis.sql](Video%20Games%20sales-clean%20exploratory%20analysis.sql)
 - **Excel analysis:** [Video-Game-Sales-Excel-Analysis-Portfolio.xlsx](outputs/video_game_sales_excel/Video-Game-Sales-Excel-Analysis-Portfolio.xlsx)
 
 ## Dashboard
