@@ -2,7 +2,7 @@
 
 ## Project summary
 
-This project examines historical video-game sales to identify performance patterns across genres, consoles, publishers, regions, critic-score bands, release years, and individual titles. The analysis was designed for a publisher or distributor seeking evidence to support portfolio planning, regional positioning, and title benchmarking.
+This project examines video-game sales to identify performance patterns across genres, consoles, publishers, regions, critic-score bands, release years, and individual titles. The analysis was designed for a publisher or distributor seeking evidence to support portfolio planning, regional positioning, and title benchmarking.
 
 The source contains 64,016 cleaned records and 39,585 unique title names. Because sales reporting becomes materially less complete after 2018, the main performance views focus on release-dated records from 1971 through 2018.
 
@@ -65,7 +65,7 @@ Excel independently reproduced selected genre and title results. Tableau then pr
 
 ### Genre performance
 
-Sports generated the highest reported global sales in the full genre analysis at 1,187.51 million units, followed by Action at 1,125.89 million and Shooter at 995.50 million. Together, these three genres represented 50.09% of reported sales in that analysis.
+Sports generated the highest reported global sales in the full genre analysis at 1,186.77 million in reported global sales, followed by Action at 1,124.39 million and Shooter at 995.47 million. Together, these three genres represented 50.09% of reported sales in that analysis.
 
 Reporting coverage differed by genre, so sales totals were evaluated alongside record counts and coverage rather than treated as complete market totals.
 
@@ -111,7 +111,7 @@ The highest score band averaged about 6.6 times the reported sales of the below-
 
 ### Publishers and titles
 
-Activision led the publisher ranking through 2018 with 722.32 million units in reported sales, followed by Electronic Arts at 643.73 million and EA Sports at 485.60 million. Publisher labels were analyzed exactly as recorded, so related labels such as Electronic Arts and EA Sports were not consolidated.
+Activision led the publisher ranking through 2018 with 722.32 million in reported sales, followed by Electronic Arts at 643.73 million and EA Sports at 485.60 million. Publisher labels were analyzed exactly as recorded, so related labels such as Electronic Arts and EA Sports were not consolidated.
 
 After combining matching title names across consoles, the leading titles were:
 
@@ -137,7 +137,7 @@ For historical portfolio or catalog planning:
 
 ## Limitations
 
-- Sales values are reported in millions of units and do not form a complete record of the global market.
+- Sales values are reported in millions and do not form a complete record of the global market.
 - `NULL` sales values mean unreported, not zero.
 - The main performance scope ends in 2018 because coverage declines materially afterward.
 - Regional comparisons use only complete cases.
@@ -147,4 +147,4 @@ For historical portfolio or catalog planning:
 
 ## Outcome
 
-The project converts a large, incomplete source file into a documented analytical workflow spanning MySQL, Excel, and Tableau. It demonstrates data-quality judgment, transparent eligibility rules, reproducible SQL, cross-tool validation, and clear communication of limitations.
+The project converts a large, incomplete source file into a documented analytical workflow spanning MySQL, Excel, and Tableau. 
