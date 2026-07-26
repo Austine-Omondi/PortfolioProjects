@@ -1,6 +1,6 @@
 # Video Game Sales Analysis
 
-An end-to-end data analytics portfolio project using **MySQL, Excel, and Tableau** to examine historical video-game sales across genres, consoles, publishers, regions, critic-score bands, release years, and titles.
+An end-to-end data analytics project using **MySQL, Excel, and Tableau** to examine video-game sales across genres, consoles, publishers, regions, critic-score bands, release years, and titles.
 
 ## Project objective
 
@@ -30,13 +30,12 @@ The Tableau dashboard includes:
 
 ## Key findings
 
-- Sports led the full genre analysis with **1,187.51M** units in reported sales, followed by Action with **1,125.89M** and Shooter with **995.50M**.
-- PS2 led the through-2018 console ranking with **1,025.36M** units in reported sales.
-- In the 2,222 complete regional records, North America represented **44.72%** of sales, followed by PAL markets at **34.52%**.
+- Sports led the full genre analysis with **1,186.77M** in reported sales, followed by Action with **1,124.39M** and Shooter completing the top 3 with **995.47M**.
+- PS2 led the through-2018 console ranking with **1,025.36M** in reported global sales.
+- In the 2,222 complete regional records, North America represented **50.76%** of sales, followed by PAL markets(Europe & Africa) at **29.05%**.
 - Shooter ranked first in North America, PAL markets, and Other regions, while Role-Playing ranked first in Japan.
-- Records scoring 9.0–10.0 averaged **2.068M** units, compared with **0.314M** for records below 6.0.
-- Activision led the publisher ranking through 2018 with **722.32M** units in reported sales.
-- Grand Theft Auto V led combined title sales with **64.29M** units.
+- Activision led the publisher ranking through 2018 with **722.32M* in reported global sales.
+- Grand Theft Auto V led combined title sales with **64.29M** in reported global sales.
 
 ## Data workflow
 
@@ -58,20 +57,9 @@ The Tableau dashboard includes:
 
 ### 3. Tableau
 
-- Built an interactive dashboard for rankings, trends, regional comparisons, critic-score groups, and data coverage.
+- Built an interactive dashboard for rankings, trends and data coverage.
 - Kept reported-sales coverage visible so users can judge the strength of each comparison.
 
-## Repository structure
-
-```text
-.
-├── README.md
-├── Video-Game-Sales-Case-Study.md
-├── Video-Game-Sales-Portfolio-Analysis.sql
-└── outputs/
-    └── video_game_sales_excel/
-        └── Video-Game-Sales-Excel-Analysis-Portfolio.xlsx
-```
 
 ## Data notes
 
@@ -86,9 +74,8 @@ The Tableau dashboard includes:
 ## SQL topics demonstrated
 
 - Data profiling and eligibility checks
-- Conditional aggregation
-- Common table expressions
-- Complete-case analysis
+-Common table expressions
+-Conditional aggregation
 - Long-format reshaping with `UNION ALL`
 - Ranking with `DENSE_RANK()`
 - Partitioned window functions
