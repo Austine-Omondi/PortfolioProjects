@@ -2,13 +2,13 @@
 
 ## Executive summary
 
-This project analyses **10,000 bank customers** to determine where churn is most concentrated. MySQL was used to import, validate, clean, and analyse the data, while Tableau Public was used to create an interactive dashboard.
+This project examines **10,000 bank customers** to find where churn is most concentrated. I used MySQL to import, validate, clean, and analyse the data, then built an interactive dashboard in Tableau Public.
 
-The bank’s overall churn rate was **20.37%**. The clearest concentrations of churn appeared among customers in Germany, customers aged 40–59, inactive customers, and customers with three or four products. A combined segment analysis identified **Germany · Female · Inactive** as the highest-rate segment and **France · Female · Inactive** as the segment contributing the most churned customers among the 12 country-gender-activity combinations.
+The bank’s overall churn rate was **20.37%**. Churn was most concentrated among customers in Germany, customers aged 40–59, inactive customers, and customers with three or four products. Of the 12 country-gender-activity combinations, **Germany · Female · Inactive** had the highest churn rate, while **France · Female · Inactive** contributed the most churned customers.
 
 ## Business problem
 
-Customer churn reduces the value of the bank’s existing customer base and increases pressure to acquire replacement customers. A useful retention analysis must identify not only groups with high churn rates, but also groups that contribute meaningful numbers of churned customers.
+Customer churn reduces the value of the bank’s existing customer base and puts more pressure on the bank to acquire replacement customers. A useful retention analysis needs to identify groups with high churn rates as well as those that contribute meaningful numbers of churned customers.
 
 The stakeholder question was:
 
@@ -25,7 +25,7 @@ The stakeholder question was:
 
 ## Dataset
 
-The dataset contains **10,000 records**, with one row per customer. The analysed fields include:
+The dataset contains **10,000 records**, with each row representing one customer. The fields used in the analysis include:
 
 - Customer ID
 - Country
@@ -51,9 +51,9 @@ A customer was classified as churned when `Exited = 1`.
 
 ### 1. Import and type verification
 
-The CSV was first imported into a raw MySQL staging table. Uncertain fields were initially stored as text to reduce the risk of failed imports or silent truncation.
+I first imported the CSV into a raw MySQL staging table. Fields with uncertain data types were initially stored as text to reduce the risk of failed imports or silent truncation.
 
-Before converting data types, the fields were inspected for:
+Before converting the data types, I inspected the fields for:
 
 - Non-numeric customer IDs
 - Unexpected identifier lengths
@@ -63,11 +63,11 @@ Before converting data types, the fields were inspected for:
 - Leading and trailing whitespace
 - Values outside plausible numeric ranges
 
-Validated fields were then converted to suitable numeric and text types in a clean table.
+I then converted the validated fields to suitable numeric and text types in a clean table.
 
 ### 2. Data validation and cleaning
 
-The clean dataset was checked for:
+I checked the clean dataset for:
 
 - Missing values
 - Duplicate customer IDs
@@ -76,27 +76,27 @@ The clean dataset was checked for:
 - Whitespace in text fields
 - Numeric ranges inconsistent with the data dictionary
 
-The verified ranges included ages from **18 to 92**, credit scores from **350 to 850**, tenure from **0 to 10**, and product counts from **1 to 4**.
+The verified ranges were **18 to 92** for age, **350 to 850** for credit score, **0 to 10** for tenure, and **1 to 4** for product count.
 
 ### 3. SQL analysis
 
-The analysis calculated:
+I calculated:
 
 - Total, churned, and retained customers
 - Churn rate
 - Churn metrics by country, gender, age group, number of products, and activity status
 - Churn metrics for all 12 country-gender-activity combinations
 
-Churn rate was evaluated as shown below:
+I calculated churn rate as follows:
 
 Churn rate = (churned customers / Total customers) *  100.0 
 
 
-Churn rate measures the concentration of churn within a group. Churned-customer count measures the group’s contribution to total churn.
+Churn rate shows how concentrated churn is within a group. Churned-customer count shows how much that group contributes to total churn.
 
 ### 4. Tableau dashboard
 
-The dashboard contains:
+The dashboard includes:
 
 - Four headline KPIs
 - Country and age-group bar charts
@@ -116,7 +116,7 @@ The dashboard contains:
 |---:|---:|---:|---:|
 | 10,000 | 2,037 | 7,963 | 20.37% |
 
-Approximately one in five customers in the dataset had churned.
+About one in five customers in the dataset had churned.
 
 ### Churn by country
 
@@ -126,7 +126,7 @@ Approximately one in five customers in the dataset had churned.
 | Spain | 2,477 | 413 | 16.67% |
 | France | 5,014 | 810 | 16.15% |
 
-Germany had the highest churn rate, at approximately twice the rates in Spain and France. Germany and France contributed similar numbers of churned customers, even though France had roughly twice as many customers.
+Germany had the highest churn rate, at about twice the rates in Spain and France. Germany and France contributed similar numbers of churned customers, even though France had roughly twice as many customers.
 
 ### Churn by gender
 
@@ -135,7 +135,7 @@ Germany had the highest churn rate, at approximately twice the rates in Spain an
 | Female | 4,543 | 1,139 | 25.07% |
 | Male | 5,457 | 898 | 16.46% |
 
-Female customers recorded both a higher churn rate and a higher churned-customer count than male customers. This is an observed association and does not establish that gender caused the difference.
+Female customers had a higher churn rate and a higher churned-customer count than male customers. This is an observed association and does not establish that gender caused the difference.
 
 ### Churn by age group
 
@@ -147,7 +147,7 @@ Female customers recorded both a higher churn rate and a higher churned-customer
 | 30–39 | 4,346 | 473 | 10.88% |
 | 18–29 | 1,641 | 124 | 7.56% |
 
-Customers aged 50–59 had the highest churn rate. Customers aged 40–49 contributed the largest number of churned customers, demonstrating why rate and volume should be considered together.
+Customers aged 50–59 had the highest churn rate, while those aged 40–49 contributed the largest number of churned customers. This shows why rate and volume need to be considered together.
 
 ### Churn by number of products
 
@@ -158,7 +158,7 @@ Customers aged 50–59 had the highest churn rate. Customers aged 40–49 contri
 | 1 | 5,084 | 1,409 | 27.71% |
 | 2 | 4,590 | 348 | 7.58% |
 
-Customers with three or four products recorded extremely high churn rates. However, these groups contained only **266** and **60** customers respectively, so the results should be investigated rather than generalised. Customers with two products had the lowest churn rate.
+Customers with three or four products had extremely high churn rates. However, these groups contained only **266** and **60** customers respectively, so the results need further investigation and should not be generalised. Customers with two products had the lowest churn rate.
 
 ### Churn by activity status
 
@@ -167,11 +167,11 @@ Customers with three or four products recorded extremely high churn rates. Howev
 | Inactive | 4,849 | 1,302 | 26.85% |
 | Active | 5,151 | 735 | 14.27% |
 
-Inactive customers churned at a rate **12.58 percentage points** higher than active customers. Inactivity was therefore an important retention signal in this dataset.
+The churn rate for inactive customers was **12.58 percentage points** higher than the rate for active customers. Inactivity was therefore an important retention signal in this dataset.
 
 ### Priority combined segments
 
-The combined analysis compared all 12 country-gender-activity segments. The dashboard highlighted three segments that combined above-average churn rates with substantial churned-customer counts:
+I compared all 12 country-gender-activity segments. The dashboard highlighted three with above-average churn rates and substantial churned-customer counts:
 
 | Customer segment | Total customers | Churned customers | Churn rate |
 |---|---:|---:|---:|
@@ -179,29 +179,29 @@ The combined analysis compared all 12 country-gender-activity segments. The dash
 | Germany · Male · Inactive | 627 | 235 | 37.48% |
 | France · Female · Inactive | 1,099 | 288 | 26.21% |
 
-**Germany · Female · Inactive** had the highest churn rate among the 12 segments. **France · Female · Inactive** contributed the most churned customers, with 288.
+Of the 12 segments, **Germany · Female · Inactive** had the highest churn rate. **France · Female · Inactive** contributed the most churned customers, with 288.
 
 ## Recommendations
 
 ### 1. Prioritise inactive customers for retention testing
 
-Inactive customers had both a higher churn rate and more churned customers than active customers. The bank could test targeted re-engagement actions and measure whether they reduce churn.
+Inactive customers had a higher churn rate and more churned customers than active customers. The bank could test targeted re-engagement actions and measure whether those actions reduce churn.
 
 ### 2. Investigate the customer experience in Germany
 
-Germany had the highest country-level churn rate, and two German inactive groups appeared among the three highlighted segments. Further analysis should examine whether product mix, service experience, pricing, or other unobserved factors differ in this market.
+Germany had the highest country-level churn rate, and two inactive German groups appeared among the three highlighted segments. Further analysis should examine whether product mix, service experience, pricing, or other unobserved factors differ in this market.
 
 ### 3. Examine churn among customers aged 40–59
 
-Customers aged 50–59 had the highest rate, while customers aged 40–49 contributed the most churned customers. These groups should be analysed further before selecting an intervention.
+Customers aged 50–59 had the highest churn rate, while those aged 40–49 contributed the most churned customers. These groups should be analysed further before an intervention is selected.
 
 ### 4. Review customers with three or four products
 
-The extreme churn rates warrant investigation, but the small group sizes mean the bank should avoid broad conclusions until the pattern is validated with additional data.
+The extreme churn rates need to be investigated, but the groups are small. The bank should avoid drawing broad conclusions until the pattern is validated with additional data.
 
 ### 5. Prioritise using both rate and volume
 
-High-rate groups are not always the groups contributing the most churned customers. Using both measures produces a more balanced retention priority.
+Groups with high churn rates do not always contribute the most churned customers. Using both measures gives the bank a more balanced way to prioritise retention efforts.
 
 ## Limitations
 
@@ -214,6 +214,6 @@ High-rate groups are not always the groups contributing the most churned custome
 
 ## Conclusion
 
-Churn was unevenly distributed across the customer base. Germany, customers aged 40–59, inactive customers, and customers with three or four products showed the strongest concentrations of risk. Combined-segment analysis further identified inactive German customers as high-rate groups, while inactive female customers in France contributed the largest churn volume among the 12 segments.
+Churn was not evenly distributed across the customer base. The highest concentrations of risk appeared in Germany, among customers aged 40–59, among inactive customers, and among customers with three or four products. The combined-segment analysis also identified inactive German customers as high-rate groups, while inactive female customers in France contributed the largest churn volume among the 12 segments.
 
-These findings provide evidence-based priorities for deeper investigation. They do not explain why customers churned, so the next step would be to combine this analysis with behavioural and customer-experience data and evaluate retention actions through controlled testing.
+These findings give the bank evidence-based priorities for further investigation. They do not explain why customers churned. The next step would be to combine this analysis with behavioural and customer-experience data, then evaluate retention actions through controlled testing.
