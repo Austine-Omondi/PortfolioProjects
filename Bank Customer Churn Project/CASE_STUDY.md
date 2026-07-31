@@ -1,4 +1,4 @@
-# Bank Customer Churn Analysis — Case Study
+# Bank Customer Churn Analysis - Case Study
 
 ## Executive summary
 
